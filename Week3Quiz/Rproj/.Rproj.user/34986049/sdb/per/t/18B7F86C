@@ -1,0 +1,21 @@
+{
+    "contents" : "",
+    "created" : 1381696559393.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "18B7F86C",
+    "lastKnownWriteTime" : 0,
+    "path" : null,
+    "properties" : {
+        "caption" : "Stats1.13.HW.03",
+        "contentUrl" : "content?title=Stats1.13.HW.03&file=af45c59727cf4907b66492d1e82f6759.htm",
+        "displayedObservations" : 200,
+        "displayedVariables" : 10,
+        "totalObservations" : 200,
+        "variables" : 10
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

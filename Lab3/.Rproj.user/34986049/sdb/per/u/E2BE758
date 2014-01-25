@@ -1,0 +1,16 @@
+{
+    "contents" : "library(psych)\nlibrary(gclus)\nlibrary(rgl)\nimpact <- read.table('stats1_datafiles_Stats1.13.Lab.02.txt', header=TRUE)\n#rename the columns\norig.names <- names(impact) # for reference\nnames<-c('subject','condition','vermem1','vismem1','vms1','rt1','ic1','sym1','vermem2','vismem2','vms2','rt2','ic2','sym2')\nnames(impact)<-names\n#edit(impact)\n\ndescribe(impact)\ndescribeBy(impact, impact$condition)\n#correlation analysis of baseline measures\nround(cor(impact[3:8]),2)\n\n#create two subsets, control and concussed\ncontrol<-subset(impact,condition=='control')\ncontrol\nconcussed<-subset(impact,condition=='concussed')\nconcussed\n#correlation analysis of the control group, all measure\nround(cor(control[3:14]),2)\n\n#correlation analysis of the concussed group, all measure\nround(cor(concussed[3:14]),2)\n\n# Does baseline impulse control predict memory impairment after a concussion?\nconcussed$verbal.impair <- (concussed$vermem1 - concussed$vermem2)\nconcussed$visual.impair <- (concussed$vismem1 - concussed$vismem2)\nconcussed$memory.impair <- (concussed$verbal.impair + concussed$visual.impair) / 2\n\ncor(concussed$memory.impair, concussed$ic1)\n# there seems to be small corrections between the above two variables\n\n#scatter plots\nplot(impact$vermem1 ~ impact$vismem1)\n\n#st. scatterplot with regreesion line\nabline(lm(impact$vermem1 ~ impact$vismem1), col='green')\n\n#scatterplot matrix\npairs(~impact$vermem1 + impact$vismem1 + impact$vms1 + impact$rt1 +impact$sym1, cex.labels=1.2)\n\n\n# Color scatterplot matrix,\nbase <- impact[3:8]\nbase.r <- abs(cor(base))\nbase.color <- dmat.color(base.r)\nbase.order <- order.single(base.r)\ncpairs(base, base.order, panel.colors = base.color, gap = .5,\n       main = 'Variables Ordered and Colored by Correlation')\n\n\n# Scatterplot in 3D\nplot3d(impact$vismem1,impact$sym1, impact$vermem1, main = '3D Plot')\nplot3d(impact$vismem2,impact$sym2, impact$vermem2, main = '3D Plot')\n\n",
+    "created" : 1381711720993.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "2109248316",
+    "id" : "E2BE758",
+    "lastKnownWriteTime" : 5415923328,
+    "path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

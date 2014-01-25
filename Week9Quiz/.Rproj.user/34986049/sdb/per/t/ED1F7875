@@ -1,0 +1,15 @@
+{
+    "contents" : "PID\tPrime\tHaste\tHelping\r1\t1\t1\t4.38\r2\t1\t1\t4.58\r3\t1\t1\t2.7\r4\t1\t1\t3.65\r5\t1\t1\t3.84\r6\t1\t1\t4.66\r7\t1\t1\t2.79\r8\t1\t2\t2.39\r9\t1\t2\t2.89\r10\t1\t2\t1.42\r11\t1\t2\t0.36\r12\t1\t2\t2.92\r13\t1\t2\t2.61\r14\t1\t2\t1.41\r15\t1\t3\t1.14\r16\t1\t3\t1\r17\t1\t3\t1\r18\t1\t3\t2.17\r19\t1\t3\t1.02\r20\t1\t3\t2.24\r21\t1\t3\t0.43\r22\t2\t1\t1.88\r23\t2\t1\t2.29\r24\t2\t1\t3.31\r25\t2\t1\t0.04\r26\t2\t1\t1.05\r27\t2\t1\t2.17\r28\t2\t1\t0.95\r29\t2\t2\t0.39\r30\t2\t2\t1.69\r31\t2\t2\t0.65\r32\t2\t2\t2.94\r33\t2\t2\t0.89\r34\t2\t2\t2.5\r35\t2\t2\t2.63\r36\t2\t3\t0.26\r37\t2\t3\t1\r38\t2\t3\t0.06\r39\t2\t3\t2.66\r40\t2\t3\t0.45\r41\t2\t3\t1\r42\t2\t3\t0.07",
+    "created" : 1384878254301.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3935241326",
+    "id" : "ED1F7875",
+    "lastKnownWriteTime" : 1384638723,
+    "path" : "~/Documents/Personal/Samantha/LearningMaterials/OnlineCourses_Coursera/StatisticsOne_Princeton/Week9Quiz/Stats1.13.HW.09.txt",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "text"
+}

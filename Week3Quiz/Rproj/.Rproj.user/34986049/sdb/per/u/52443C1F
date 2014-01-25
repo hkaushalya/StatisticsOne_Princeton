@@ -1,0 +1,16 @@
+{
+    "contents" : "#Statistics One: Princeton\n# Quiz # 3\n\ndf<-read.table('../Stats1.13.HW.03.txt', header=TRUE)\ndf\nhead(df)\npar(mfrow=c(2,2))\nplot(df$S1.pre, df$S2.pre)\n#abline(lm(df$S1.pre~df$S2.pre,data=df), col='red')\nplot(df$V1.pre, df$V2.pre)\n#abline(lm(df$V1.pre~df$V2.pre,data=df), col='blue')\nplot(df$S1.post, df$S2.post)\n#abline(lm(df$S1.pre~df$S2.pre,data=df), col='red')\nplot(df$V1.post, df$V2.post)\n\n\ncor.pre.S<-cor(df$S1.pre, df$S2.pre)\ncor.pre.V<-cor(df$V1.pre, df$V2.pre)\n\ncomb.pre.S<-(df$S1.pre+df$S2.pre)/2\ncomb.pre.V<-(df$V1.pre+df$V2.pre)/2\ncomb.post.S<-(df$S1.post+df$S2.post)/2\ncomb.post.V<-(df$V1.post+df$V2.post)/2\n\ncor.comd.S<-cor(comb.pre.S, comb.post.S)\ncor.comd.V<-cor(comb.pre.V, comb.post.V)\n\n\n\n\n#Which group exhibited more improvement in spatial reasoning?\ndf.des<-subset(df,cond=='des')\ndf.aer<-subset(df,cond=='aer')\ndes.comb.pre.S<-(df.des$S1.pre+df.des$S2.pre)/2\ndes.comb.post.S<-(df.des$S1.post+df.des$S2.post)/2\nhist(des.comb.pre.S)\nhist(des.comb.post.S)\naer.comb.pre.S<-(df.aer$S1.pre+df.aer$S2.pre)/2\naer.comb.post.S<-(df.aer$S1.post+df.aer$S2.post)/2\nhist(aer.comb.pre.S)\nhist(aer.comb.post.S)\n\n\n",
+    "created" : 1381696460492.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "309345832",
+    "id" : "52443C1F",
+    "lastKnownWriteTime" : 4294901766,
+    "path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

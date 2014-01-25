@@ -1,0 +1,16 @@
+{
+    "contents" : "rm(list=ls())\nlibrary(psych)\ndf <- read.table('stats1_datafiles_Stats1.13.HW.10.txt', header=T)\ndescribe(df)\nstr(df)\n\n# Question 1\n# What is the median population age for the countries which voted to \n# take action against global warming? (round to 2 decimal places)\n\ndescribeBy(df$age, df$change==\"1\")\n\n\n# Question 2\n# Run a logistic regression including all predictor variables. \n# Which predictors are significant in this model?\n\n# Binary logistic regression\n#lrfit <- glm(df$change ~ df$country + df$age + df$educ + df$gdp + df$co2, family = binomial)\nlrfit <- glm(df$change ~ df$age + df$educ + df$gdp + df$co2, family = binomial)\nsummary(lrfit)\nconfint(lrfit) #using log likelyhood\nconfint.default(lrfit)  #using standard errors\n\n# Model fit (using chi2)\nwith(lrfit, null.deviance - deviance)\nwith(lrfit, df.null - df.residual)  #df = dof\nwith(lrfit, pchisq(null.deviance-deviance, df.null-df.residual, lower.tail=FALSE)) #p-values\n\n# Question 3\n# What does the negative value for the estimate of educ means?\n\n\n# Question 4\n# What is the confidence interval for educ, \n# using profiled log-likelihood? (round to 2 decimal places, \n# and give the lower bound first and the upper bound second, separated by a space)\nconfint(lrfit)\n\n# Question 5\n# What is the confidence interval for age, \n# using standard errors? (round to 2 decimal places, and give the lower bound \n# first and the upper bound second, separated by a space)\nconfint.default(lrfit)\n\n#Question 6\n# Compare the present model with a null model. \n# What is the difference in deviance for the two models? \n# (round to 2 decimal places)\nmodel.dev <- with(lrfit, null.deviance-deviance)\nround(model.dev,2)\nmodel.df <- with(lrfit, df.null - df.residual)\nmodel.df\nwith(lrfit, pchisq(null.deviance-deviance, df.null-df.residual, lower.tail = FALSE)) #p-value\n\n\n\n# Question 9\n# Do chi-squared values differ significantly if you \n# drop educ as a predictor in the model?\nlrfit2 <- glm(df$change ~ df$age + df$gdp + df$co2, family = binomial)\nsummary(lrfit2)\nwith(lrfit2, null.deviance-deviance)\nwith(lrfit2, df.null - df.residual)\nwith(lrfit2, pchisq(null.deviance-deviance, df.null-df.residual, lower.tail = FALSE)) #p-value\n\n#Question 10\n# What is the percentage of cases that can be classified \n# correctly based on our model?\nlibrary(aod)\nlibrary(QuantPsyc)\nClassLog(lrfit, df$change)",
+    "created" : 1386011725137.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3282520307",
+    "id" : "3D601068",
+    "lastKnownWriteTime" : 1386026615,
+    "path" : "~/Documents/Personal/Samantha/LearningMaterials/OnlineCourses_Coursera/StatisticsOne_Princeton/Week10Quiz/quiz10.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

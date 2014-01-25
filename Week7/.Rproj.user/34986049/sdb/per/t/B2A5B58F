@@ -1,0 +1,16 @@
+{
+    "contents" : "library(psych)\n\ndf <- read.table('stats1_datafiles_Stats1.13.HW.07.txt', header=T)\ndescribe(df)\nsummary(df)\nstr(df)\n\n#What is the correlation between extraversion and happiness?\ncor(df$happy, df$extra)\n#What is the correlation between extraversion and diversity of life experience?\ncor(df$diverse, df$extra)\n\n#What is the correlation between diversity of life experience and happiness?\ncor(df$diverse, df$happy)\n\n\n\n#What percentage of variance in happiness is explained by extraversion?\n#Answer for Question 4\n\nmod1 <- lm(happy ~ extra, data=df)\nmod1\nsummary(mod1)\nconfint(mod1)\n\n#What percentage of variance in happiness is explained by a model with both extraversion and diversity of life experience as predictors?\nmod2 <- lm(happy ~ extra + diverse, data=df)\nmod2\nsummary(mod2)\nconfint(mod2)\n\nlibrary(multilevel)\nsobel(df$extra,df$diverse,df$happy)\n",
+    "created" : 1384114041922.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2556853449",
+    "id" : "B2A5B58F",
+    "lastKnownWriteTime" : 1384137968,
+    "path" : "~/Documents/Personal/Samantha/LearningMaterials/OnlineCourses_Coursera/StatisticsOne_Princeton/Week7/quiz7.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

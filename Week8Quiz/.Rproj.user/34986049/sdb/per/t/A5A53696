@@ -1,0 +1,15 @@
+{
+    "contents" : "subject\tcondition\ttime\tSR\r1\tWM\tpre\t11\r2\tWM\tpre\t13\r3\tWM\tpre\t16\r4\tWM\tpre\t11\r5\tWM\tpre\t8\r6\tWM\tpre\t15\r7\tWM\tpre\t13\r8\tWM\tpre\t11\r9\tWM\tpre\t12\r10\tWM\tpre\t12\r11\tWM\tpre\t9\r12\tWM\tpre\t13\r13\tWM\tpre\t10\r14\tWM\tpre\t8\r15\tWM\tpre\t14\r16\tWM\tpre\t12\r17\tPE\tpre\t12\r18\tPE\tpre\t15\r19\tPE\tpre\t17\r20\tPE\tpre\t7\r21\tPE\tpre\t13\r22\tPE\tpre\t10\r23\tPE\tpre\t8\r24\tPE\tpre\t15\r25\tPE\tpre\t14\r26\tPE\tpre\t11\r27\tPE\tpre\t10\r28\tPE\tpre\t12\r29\tPE\tpre\t12\r30\tPE\tpre\t14\r31\tPE\tpre\t10\r32\tPE\tpre\t13\r33\tDS\tpre\t12\r34\tDS\tpre\t11\r35\tDS\tpre\t10\r36\tDS\tpre\t6\r37\tDS\tpre\t11\r38\tDS\tpre\t15\r39\tDS\tpre\t18\r40\tDS\tpre\t13\r41\tDS\tpre\t13\r42\tDS\tpre\t10\r43\tDS\tpre\t11\r44\tDS\tpre\t12\r45\tDS\tpre\t12\r46\tDS\tpre\t14\r47\tDS\tpre\t12\r48\tDS\tpre\t16\r1\tWM\tpost\t13\r2\tWM\tpost\t12\r3\tWM\tpost\t17\r4\tWM\tpost\t13\r5\tWM\tpost\t9\r6\tWM\tpost\t15\r7\tWM\tpost\t14\r8\tWM\tpost\t13\r9\tWM\tpost\t15\r10\tWM\tpost\t11\r11\tWM\tpost\t11\r12\tWM\tpost\t14\r13\tWM\tpost\t13\r14\tWM\tpost\t10\r15\tWM\tpost\t15\r16\tWM\tpost\t14\r17\tPE\tpost\t13\r18\tPE\tpost\t14\r19\tPE\tpost\t17\r20\tPE\tpost\t9\r21\tPE\tpost\t13\r22\tPE\tpost\t10\r23\tPE\tpost\t9\r24\tPE\tpost\t14\r25\tPE\tpost\t14\r26\tPE\tpost\t10\r27\tPE\tpost\t12\r28\tPE\tpost\t12\r29\tPE\tpost\t12\r30\tPE\tpost\t14\r31\tPE\tpost\t11\r32\tPE\tpost\t10\r33\tDS\tpost\t17\r34\tDS\tpost\t17\r35\tDS\tpost\t14\r36\tDS\tpost\t9\r37\tDS\tpost\t13\r38\tDS\tpost\t18\r39\tDS\tpost\t19\r40\tDS\tpost\t15\r41\tDS\tpost\t14\r42\tDS\tpost\t12\r43\tDS\tpost\t15\r44\tDS\tpost\t14\r45\tDS\tpost\t13\r46\tDS\tpost\t16\r47\tDS\tpost\t14\r48\tDS\tpost\t15",
+    "created" : 1384710096465.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1434273938",
+    "id" : "A5A53696",
+    "lastKnownWriteTime" : 1380136570,
+    "path" : "~/Documents/Personal/Samantha/LearningMaterials/OnlineCourses_Coursera/StatisticsOne_Princeton/Week8Quiz/Stats1.13.HW.02.txt",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "text"
+}

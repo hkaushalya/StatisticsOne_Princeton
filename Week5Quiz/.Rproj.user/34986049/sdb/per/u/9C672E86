@@ -1,0 +1,16 @@
+{
+    "contents" : "df <- read.csv('Stats1.13.HW.04.txt', header =T )\nhead(df)\n\nmodel1 <- lm (df$salary ~ df$years, data = df)",
+    "created" : 1382846660574.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "1670782567",
+    "id" : "9C672E86",
+    "lastKnownWriteTime" : 4296631141,
+    "path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

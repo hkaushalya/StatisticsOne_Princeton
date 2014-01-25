@@ -1,0 +1,16 @@
+{
+    "contents" : "#lawyer/teacher/doctor salary comparison\n\nlibrary(psych)\n\ndf <- read.table('stats1-datafiles-Stats1.13.HW.06.txt' ,header =T)\nstr(df)\ncor(df[2:4])\n\nmodel1 <- lm(salary ~ years, data = df)\nsummary(model1)\nconfint(model1)\n\nmodel2 <- lm(salary ~ years + courses, data = df)\nsummary(model2)\nconfint(model2)\n\n#dummy code\nprof.code <- C(df$profession, treatment)\nprof.code\n\nmodel3 <- lm(salary ~ years + courses + prof.code , data = df)\nsummary(model3)\nconfint(model3)\n\nanova(model1, model2)\nanova(model1, model2)\nanova(model3, model2)\n\n\nmodel.x <- lm(salary ~ prof.code, data=df)\nsummary(model.x)\nanova(model.law, model.doc)\n\ntapply(df$salary, df$profession, mean)\n\n\n\n\n",
+    "created" : 1382906862892.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1545273360",
+    "id" : "147A220D",
+    "lastKnownWriteTime" : 1383660232,
+    "path" : "~/Documents/Personal/Samantha/LearningMaterials/OnlineCourses_Coursera/StatisticsOne_Princeton/Week6/Quiz6.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,16 @@
+{
+    "contents" : "rm(list=ls())\n\nlibrary(psych)\n\nPE <- read.table(\"../Lab4/stats1-datafiles-Stats1.13.Lab.04.txt\" , header = T)\n\ndescribe(PE)\n\n#Correlation Analysis\ncor(PE[2:4])  # Omit column 1 because it contains participant id numbers\n\nround(cor(PE[2:4]), 2)\n\ncor.test(PE$age, PE$activeyears)\ncor.test(PE$endurance, PE$activeyears)\ncor.test(PE$endurance, PE$age)\n\n# Histograms\nlayout(matrix(c(1,2,3,4), 2, 2, byrow =TRUE))\nhist(PE$age)\nhist(PE$activeyears)\nhist(PE$endurance)\n\nlayout(matrix(c(1,1), 1, 1, byrow =TRUE))\n\n# Regression analysis, unstandardize\nmodel.1 <- lm(PE$endurance ~ PE$age)\nsummary(model.1)\nplot(PE$endurance ~ PE$age)\nabline(lm(PE$endurance ~ PE$age), col='blue')\n\nmodel.2 <- lm(PE$endurance ~ PE$activeyears)\nsummary(model.2)\nplot(PE$endurance ~ PE$activeyears)\nabline(lm(PE$endurance ~ PE$activeyears), col='blue')\n\n# multiple regression\nmodel.3 <- lm(PE$endurance ~ PE$age + PE$activeyears)\nsummary(model.3)\nplot(PE$endurance ~ PE$activeyears)\nabline(lm(PE$endurance ~ PE$activeyears), col='blue')\n\n# to visualize model3\nPE$predicted <- fitted(model.3)\nplot(PE$endurance ~ PE$predicted)\nabline(lm(PE$endurance ~ PE$predicted), col='blue')\n\n# The function residuals\nPE$e <- resid(model.3)\nhist(PE$e)\nplot(PE$predicted ~ PE$e)\nabline(lm(PE$predicted ~ PE$e), col='blue')\n\n# Regression analyses, standardized\n# In simple regression, the standardized regression coeffcient will be the same\n# as the correlation coefficient\n\nround(cor(PE[2:4]), 2)\n\nmodel1.z <- lm (scale(PE$endurance) ~ scale(PE$age))\nsummary(model1.z)\n\nmodel2.z <- lm (scale(PE$endurance) ~ scale(PE$activeyears))\nsummary(model2.z)\n\nmodel3.z <- lm (scale(PE$endurance) ~ scale(PE$age) + scale(PE$activeyears))\nsummary(model3.z)\n",
+    "created" : 1382382847315.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1473748754",
+    "id" : "F0A32170",
+    "lastKnownWriteTime" : 1382386337,
+    "path" : "~/Documents/Personal/Samantha/LearningMaterials/OnlineCourses_Coursera/StatisticsOne_Princeton/Week4Quiz/Lab4.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

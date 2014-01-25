@@ -1,0 +1,16 @@
+{
+    "contents" : "#lab#3\n\nread.table('../Lab2/stats1_datafiles_Stats1.13.Lab.02.txt')",
+    "created" : 1381711361345.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "2866319066",
+    "id" : "CE862620",
+    "lastKnownWriteTime" : 6,
+    "path" : null,
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

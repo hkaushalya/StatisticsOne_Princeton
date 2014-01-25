@@ -1,0 +1,16 @@
+{
+    "contents" : "# We now return to our cognitive training example. \n# In this week's dataset, we compare the impact of three training \n# conditions (Working Memory training, Physical Exercise, and \n# Designed Sport) on Spatial Reasoning (SR), measured before (pre) \n# and after (post) training.\n\nlibrary(psych)\ndf <- read.table('Stats1.13.HW.02.txt',header=T)\ndf\nstr(df)\n\n#1:Using a dependent t-test, is the difference\n# between pre and post-test scores significant?\npreSR <- subset(df, time==\"pre\")\npostSR <- subset(df, time==\"post\")\ndescribeBy(df,group=df$time)\n\nt.test(preSR$SR,postSR$SR, paired=T)\nlibrary(lsr)\ncohensD(preSR$SR,postSR$SR, method='paired')\n\n\n#2: Create subsets for each training condition. Which group\n#   shows no difference between pre and post-test scores?\nlevels(df$condition)\nDS.preSR <-subset(preSR, preSR$condition=='DS')\nPE.preSR <-subset(preSR, preSR$condition=='PE')\nWM.preSR <-subset(preSR, preSR$condition=='WM')\n\nDS.postSR <-subset(postSR, postSR$condition=='DS')\nPE.postSR <-subset(postSR, postSR$condition=='PE')\nWM.postSR <-subset(postSR, postSR$condition=='WM')\n\nt.test(DS.preSR$SR, DS.postSR$SR, paired=T)\nt.test(PE.preSR$SR, PE.postSR$SR, paired=T)\nt.test(WM.preSR$SR, WM.postSR$SR, paired=T)\n\n#Question 3\n# Which training group shows the largest effect size for the \n# difference pre-test to post-test?\ncohensD(DS.preSR$SR,DS.postSR$SR, method='paired')\ncohensD(PE.preSR$SR,PE.postSR$SR, method='paired')\ncohensD(WM.preSR$SR,WM.postSR$SR, method='paired')\n\n#Question 4\n# Reshape the data into a wide format, and create a new variable\n# for gain score. Now subset the new dataframe based on the \n# training conditions. Which comparison between training conditions \n# does not show a significant difference?\nlibary(reshape)\ndf.wide <- cast(df, subject+condition ~ time, value=\"SR\")\ndf.wide[,\"gain\"] <- df.wide$post - df.wide$pre\ndf.wide\n\n#subset the data\ndf.wide.WM <- subset(df.wide, condition==\"WM\")\ndf.wide.PE <- subset(df.wide, condition==\"PE\")\ndf.wide.DS <- subset(df.wide, condition==\"DS\")\nt.test(df.wide.DS$gain, df.wide.WM$gain, var.equla=T)\nt.test(df.wide.PE$gain, df.wide.DS$gain, var.equla=T)\nt.test(df.wide.WM$gain, df.wide.PE$gain, var.equla=T)\n\n#Question 5\n#To compare the gain scores across all groups, we now turn to ANOVA.\n#Is the homogeneity of variance assumption violated?\nlibrary(psych)\ndescribeBy(df.wide$gain,df.wide$condition)\nlibrary(car)\nleveneTest(df.wide$gain~df.wide$condition)\n\naov1<-aov(df.wide$gain~df.wide$condition)\nsummary(aov1)\n\n# Question 7\n# What is the corresponding eta-squared value? (round to 2 decimal places)\netaSquared(aov1, anova=T)\n\n\n# Question 9\n# Let's now run post-hoc comparisons (Tukey HSD). \n# Which two groups do not significantly differ from \n# one another when considering gain scores?\n\nTukeyHSD(aov1)\n\n\n",
+    "created" : 1384710006960.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3982688903",
+    "id" : "78021023",
+    "lastKnownWriteTime" : 1384729453,
+    "path" : "~/Documents/Personal/Samantha/LearningMaterials/OnlineCourses_Coursera/StatisticsOne_Princeton/Week7/Quiz8.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
